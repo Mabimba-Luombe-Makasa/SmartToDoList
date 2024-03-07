@@ -1,0 +1,158 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Red Hat Display";
+    box-sizing: border-box;
+}
+
+
+.mainContainer {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #153677, #4e085f);
+    padding: 10px;
+}
+
+.mainApp {
+    width: 100%;
+    max-width: 800px;
+    background: #ffffff88;
+    margin: 100px auto 20px;
+    padding: 40px 30px 70px;
+    border-radius: 18px;
+    opacity: 0; 
+    transition: opacity 1s ease-in-out; 
+}
+
+.mainApp.loaded {
+    opacity: 1; 
+}
+
+.mainApp h2 {
+    color: #001435;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+
+.mainApp h2 img {
+    width: 40px;
+    margin-left: 10px;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #edeef0;
+    border-radius: 30px;
+    padding-left: 20px;
+    margin-bottom: 25px;
+}
+
+input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+input::placeholder {
+    font-weight: 500;
+}
+
+button {
+    border: none;
+    outline: none;
+    font-size: 17px;
+    font-weight: 600;
+    padding: 16px 50px;
+    background: #db4939;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 40px;
+}
+
+button:hover {
+    background: #ff5945;
+    font-weight: 800;
+    transition: 0.3s;
+}
+
+ul li {
+    list-style: none;
+    font-size: 18px;
+    padding: 12px 8px 12px 50px;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+}
+
+ul li::before {
+    content: '';
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    background-image: url(images/unchecked.png);
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    top: 10px;
+    left: 8px;
+}
+
+ul li.checked {
+    color: #555;
+    transition: 0.3s;
+    text-decoration: line-through;
+}
+
+ul li.checked::before{
+    background-image: url(images/checked.png);
+    transition: background-image 0.7s ease;
+}
+
+ul li span {
+    position: absolute;
+    right: 0;
+    top: 5px;
+    width: 40px;
+    height: 40px;
+    font-size: 23px;
+    color: #555;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+}
+
+ul li span:hover {
+    background: #bdbdbd;
+    color: red;
+    transition: 0.6s;
+}
+
+@keyframes fadeInStaggered {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.mainApp {
+    animation: fadeInStaggered 1.5s ease-in-out forwards;
+}
+
+.mainApp h2 {
+    animation-delay: 0.4s;
+}
+
+.row {
+    animation-delay: 0.6s;
+}
+
+ul li {
+    animation-delay: 1s;
+}
